@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org/">
+<head>
+<!-- CSS INCLUDE -->
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous"></link>
+ <!-- EOF CSS INCLUDE -->
+</head>
+<body>
+<!-- START PAGE CONTAINER -->
+<div class="container-fluid">
+	<!-- PAGE TITLE -->
+	<div class="page-title">
+		<h3>
+			<span class="fa fa-arrow-circle-o-left"></span>Welcome To Register Page!!
+		</h3>
+	</div>
+	<!-- END PAGE TITLE -->
+	<div class="column">	
+		<form action="#" method="POST" th:action="@{/customer/save}" th:object="${customer}">
+		<table>
+			<tr>
+				<td>CODE:</td> 
+				<td><input type="text" th:field="*{custCode}"/></td>
+				<td><th:errors th:field="*{custCode}"/></td> 
+			</tr>
+			<tr>
+				<td>NAME:</td>
+				<td><input type="text" th:field="*{custName}"/></td>
+				<td><th:errors th:field="*{custName}"/></td>
+			</tr>
+			<tr>
+				<td>TYPE:</td>
+				<td> <select th:field="*{custType}">
+					  <option value="">-SELECT-</option>
+					  <option value="REGULAR">REGULAR</option>
+				  	  <option value="CONTRACT">CONTRACT</option>
+				  	  <option value="GUEST">GUEST</option>
+		         	 </select>
+		        </td>
+				<td><th:errors th:field="*{custType}"/></td>
+	   		</tr>
+	   		<tr>	 
+				<td>NOTE:</td>
+				<td> <textarea th:field="*{note}"></textarea></td>	
+				<td><th:errors th:field="*{note}"/></td>
+	   		</tr>
+	   		<tr>	 
+   		 		<td>
+   		 			 <button type="submit" class="btn btn-primary">CREATE</button>
+   		 		</td>	
+   	  		</tr>	  
+		</table>
+		</form>
+	</div>
+ <!-- END PAGE CONTENT -->
+<!-- END PAGE CONTAINER -->	
+</div>
+<span class="fa fa-arrow-circle-o-left" th:text="${message}"></span>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"
+        integrity="sha256-VAvG3sHdS5LqTT+5A/aeq/bZGa/Uj04xKxY8KM/w9EE="
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>
